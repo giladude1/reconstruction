@@ -1,8 +1,8 @@
-# VGPNN
+# Training Dataset Reconstruction
 
-This is the repository that contains source code for the [VGPNN website](https://nivha.github.io/vgpnn/).
+This is the repository that contains source code for the [dataset reconstruction](https://giladude1.github.io/reconstruction/).
 
-If you find VGPNN useful for your work please cite:
+If you find our work useful for please cite:
 ```
 @article{haim2021vgpnn,
   author    = {Haim, Niv and Feinstein, Ben and Granot, Niv and Shocher, Assaf and Bagon, Shai and Dekel, Tali and Irani, Michal},
