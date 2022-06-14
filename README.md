@@ -4,11 +4,11 @@ This is the repository that contains source code for the [dataset reconstruction
 
 If you find our work useful for please cite:
 ```
-@article{haim2021vgpnn,
-  author    = {Haim, Niv and Feinstein, Ben and Granot, Niv and Shocher, Assaf and Bagon, Shai and Dekel, Tali and Irani, Michal},
-  title     = {Diverse Generation from a Single Video Made Possible},
-  journal   = {arXiv preprint arXiv:2109.08591},
-  year      = {2021},
+@article{haim2022reconstructing,
+  author    = {Haim, Niv and Vardi, Gal and Yehudai, Gilad and Irani, Michal and Shamir, Ohad},
+  title     = {Reconstructing Training Data from Trained Neural Networks},
+  journal   = {arXiv preprint arXiv:},
+  year      = {2022},
 }
 ```
 
