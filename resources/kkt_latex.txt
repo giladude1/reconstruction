@@ -1,0 +1,6 @@
+\begin{align} 
+    &\theta = \sum_{i=1}^n \lambda_i y_i \nabla_\theta  \Phi(\theta; x_i)~ &&\text{(stationarity)}\\
+    & \forall i \in [n], \;\; y_i \Phi(\theta; x_i) \geq 1 &&\text{(primal feasibility)}\\
+    &\lambda_1,\ldots,\lambda_n \geq 0 &&\text{(dual feasibility)}\\
+    & \forall i \in [n],~~ \lambda_i= 0 ~ \text{if}~  y_i \Phi(\theta; x_i) \neq 1 && \text{(complementary slackness)}
+\end{align}

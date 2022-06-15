@@ -1,0 +1,3 @@
+\begin{align}
+    L(x_1,\dots,x_m,\lambda_1,\dots,\lambda_m) =  \left\| \theta - \sum_{i=1}^m \lambda_i y_i \nabla_\theta  \Phi(\theta; x_i) \right\|_2^2
+\end{align}

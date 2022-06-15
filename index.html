@@ -15,7 +15,7 @@
 
 		gtag('config', 'G-6W3Z069ZG5');
 	</script>
-	
+		
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -55,7 +55,7 @@
               <a href="https://www.wisdom.weizmann.ac.il/~shamiro/">Ohad Shamir</a>,
             </span>
             <span class="author-block">
-              <a href="http://www.weizmann.ac.il/math/irani/">Michal Irani</a>,
+              <a href="http://www.weizmann.ac.il/math/irani/">Michal Irani</a>
             </span>
           </div>
 
@@ -97,16 +97,6 @@
                   <span>Code (soon)</span>
                   </a>
               </span>
-			  <!-- <span class="link-block"> -->
-                <!-- <a href="" -->
-                   <!-- class="external-link button is-normal is-rounded is-dark" disabled> -->
-                  <!-- <span class="icon"> -->
-                      <!-- <i class="fas fa-archive"></i> -->
-                  <!-- </span> -->
-                  <!-- <span>Supplementary (soon)</span> -->
-                  <!-- </a> -->
-              <!-- </span> -->
-
             </div>
 						
           </div>
@@ -117,19 +107,34 @@
 </section>
 
 
-<!-- Generation Carousel. -->
-<!--<section class="hero is-light is-small">
-  <div class="hero-body">
-	
-    <div class="container has-text-centered">
-		<h2 class="title is-3">CIFAR10 Experiments</h2>
-		<div class="content has-text-centered is-size-5">
-			Original video <span class="color-box original">&nbsp;</span> (top-left), all others are generated
-		</div>				
-    </div>
-  </div>
+<section class="section">
+
+			<div class="container has-text-centered">
+				<div class="content has-text-centered is-size-5">
+					
+					Reconstruction of data points from the training set of a trained binary classifier:
+
+					<div class="content is-centered is-borderless" style="text-align: center">
+						<video autoplay controls muted loop width=25%>
+							<source src="./resources/2d_evolution.mp4" type="video/mp4">
+						</video>
+						
+						<video autoplay controls muted loop width=25% style="image-rendering: pixelated;">
+							<source src="./resources/cifar_evolution.mp4" type="video/mp4">
+						</video>
+						
+						<video autoplay controls muted loop width=25%>
+							<source src="./resources/mnist_evolution.mp4" type="video/mp4">
+						</video>
+					</div>
+					Data points initialized from a random gaussian are "drifted" towards training samples by minimizing our proposed loss
+					
+										
+				</div>				
+			</div>
+		
 </section>
- -->
+
 
 
 <!-- Abstract. -->
@@ -139,14 +144,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-					<!-- <p> -->
-					<!-- Understanding to what extent neural networks memorize training data is an intriguing question with practical and theoretical implications.  -->
-					<!-- In this paper we show that in some cases a significant fraction of the training data can in fact be reconstructed from the parameters of a trained neural network classifier. -->
-					<!-- We propose a novel reconstruction scheme that stems from recent theoretical results about the implicit bias in training neural networks with gradient-based methods. -->
-					<!-- To the best of our knowledge, our results are the first to show that reconstructing a large portion of the actual training samples from a trained neural network classifier is generally possible. -->
-					<!-- This has negative implications on privacy, as it can be used as an attack for revealing sensitive training data.  -->
-					<!-- We demonstrate our method for binary MLP classifiers on a few standard computer vision datasets. -->
-					<!-- </p> -->
+					<p>
+					Understanding to what extent neural networks memorize training data is an intriguing question with practical and theoretical implications. 
+					In this paper we show that in some cases a significant fraction of the training data can in fact be reconstructed from the parameters of a trained neural network classifier.
+					We propose a novel reconstruction scheme that stems from recent theoretical results about the implicit bias in training neural networks with gradient-based methods.
+					To the best of our knowledge, our results are the first to show that reconstructing a large portion of the actual training samples from a trained neural network classifier is generally possible.
+					This has negative implications on privacy, as it can be used as an attack for revealing sensitive training data. 
+					We demonstrate our method for binary MLP classifiers on a few standard computer vision datasets.
+					</p>
 		
         </div>
       </div>
@@ -163,26 +168,68 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
 
-        <h2 class="title is-3" id="analogies">Video Analogies</h2>
+
+			<h2 class="title is-3" id="analogies">Reconstructions</h2>
 			<!-- <br/> -->
 			<div class="columns is-justified">
-				<div class="column is-6 is-size-6">
+				<div class="column">
 					<p>
-					Analogies between all pairs of the four Input Videos (marked <span class="color-box original">&nbsp;</span>) on the diagonal.
+					We reconstruct training samples from binary classifiers.
 					<br/>
-					Each generated video is the combination of an input video from its row (spatio-temporal layout) and an input video from its column (appearance).
+					Below we show reconstructions from MLPs trained on 500 images of CIFAR10/MNIST, labeled as animals/vehicles and odd/even digit, respectively.
+					<br/>
+					(Train errors are zero and test accuracies are 88.0%/77.6%)
 					</p>
 				</div>
 			</div>
+			
+			<img src="./resources/fig_3_cifar.png">
+			<br/>
+			<img src="./resources/fig_3_mnist.png">
+			
+			<br/>
+			<br/>
 
-			<div class="content is-centered is-borderless" style="text-align: center">
-				<video autoplay controls muted loop>
-						<source src="./vids/analogies/analogies_concat.mp4" type="video/mp4">
-				</video>
+
+      <h2 class="title is-3" id="analogies">Technical TL;DR</h2>
+			<!-- <br/> -->
+			<div class="columns is-justified">
+				<div class="column">
+					<p>
+					Our approach relies on theoretical results about the implicit bias in training neural networks with gradient-based methods. The implicit bias has been studied extensively in recent years with the motivation of explaining generalization in deep learning.
+					<br/>
+					We use results by Liu &amp; Li (2019) and Ji &amp; Telgarsky (2020), which establish that, under some technical assumptions, if we train a neural network with the binary cross entropy loss, its parameters will converge to a stationary point of a certain margin-maximization problem. This result implies that the parameters of the trained network satisfy a set of equations w.r.t. the training dataset. In our approach, given a trained network, we find a dataset that solves this set of equations w.r.t. the trained parameters.
+					</p>
+					More specifically, the trained parameters &theta; and the dataset {(x<sub>i</sub>,y<sub>i</sub>)}<span class="supsub"><sup>n</sup><sub>i=1</sub></span> satisfy the following sets of equations (where &lambda;<sub>1</sub>,...,&lambda;<sub>n</sub> are real numbers and &Phi;(&theta;;&sdot;) represents the neural network with parameters &theta;):
+				</div>
+			</div>
+			
+			<div class="columns has-text-centered">
+				<div class="column is-centered">
+					<img src="./resources/kkt.svg">	
+				</div>
 			</div>
 
+						
+			<div class="columns is-justified">
+				<div class="column is-centered">
+					We use the stationary condition to conduct a novel loss function:
+				</div>
+			</div>	
 
-	
+			<div class="columns has-text-centered">
+				<div class="column is-centered">
+					<img src="./resources/loss.svg">	
+				</div>
+		  </div>
+
+			<div class="columns is-justified">
+				<div class="column is-centered">
+					The animations at the top of this page show the trajectories of several x<sub>i</sub>, initialized from random gaussian noise until they reach a datapoint from the training set, by minimizing the loss L.
+				</div>
+			</div>	
+
+
 		</div>
 	</div>
 		
@@ -195,9 +242,9 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{haim2022reconstructing,
-  author    = {Haim, Niv and Vardi, Gal and Yehudai, Gilad and Irani, Michal and Shamir, Ohad},
-  title     = {Diverse Generation from a Single Video Made Possible},
-  journal   = {arXiv preprint arXiv:2109.08591},
+  author    = {Haim, Niv and Vardi, Gal and Yehudai, Gilad and Shamir, Ohad and Irani, Michal},
+  title     = {Reconstructing Training Data from Trained Neural Networks},
+  journal   = {arXiv preprint arXiv:},
   year      = {2022},
 }</code></pre>
   </div>

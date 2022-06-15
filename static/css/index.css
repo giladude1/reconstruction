@@ -106,115 +106,6 @@ body {
 .publication-body img {
 }
 
-.results-carousel {
-  overflow: hidden;
-}
-
-.results-carousel .item {
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-
-.analogies-carousel {
-  overflow: hidden;
-}
-
-.analogies-carousel .item {
-	margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-
-.spatret-carousel {
-  overflow: hidden;
-}
-
-.spatret-carousel .item {
-	margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-
-.tempret-carousel {
-  overflow: hidden;
-}
-
-.tempret-carousel .item {
-	margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-
-.cinp-carousel {
-  overflow: hidden;
-}
-
-.cinp-carousel .item {
-	margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-
-
-.vid_generation {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-}
-.vid_generation_gt {
-	image-rendering: pixelated;
-	border: 6px solid #78A2CC;
-}
-
-.vid_analogies {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-}
-.vid_analogies_gt {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-}
-
-.vid_analogies_result {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-	height: 200px;
-}
-.vid_analogies_content {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-	height: 200px;
-}
-.vid_analogies_style {
-	image-rendering: pixelated;
-	border: 6px solid transparent;
-	height: 200px;
-}
-
-
-
-
-
-
 .table {
 	table-cell-border: none
 	table-cell-border-width: 0 0 0
@@ -246,4 +137,22 @@ body {
 }
 .color-box.style:before{
   background-color:#EED7CE;
+}
+
+
+
+.supsub {
+    display: inline-block;
+}
+
+.supsub sup,
+.supsub sub {
+    position: relative;
+    display: block;
+    font-size: .5em;
+    line-height: 1.2;
+}
+
+.supsub sub {
+    top: .3em;
 }
