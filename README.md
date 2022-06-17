@@ -7,7 +7,7 @@ If you find our work useful for please cite:
 @article{haim2022reconstructing,
   author    = {Haim, Niv and Vardi, Gal and Yehudai, Gilad and Shamir, Ohad and Irani, Michal},
   title     = {Reconstructing Training Data from Trained Neural Networks},
-  journal   = {arXiv preprint arXiv:},
+  journal   = {arXiv preprint arXiv:2206.07758},
   year      = {2022},
 }
 ```
