@@ -5,10 +5,10 @@ This is the repository that contains source code for the [dataset reconstruction
 If you find our work useful for please cite:
 ```
 @article{haim2022reconstructing,
-  author    = {Haim, Niv and Vardi, Gal and Yehudai, Gilad and Shamir, Ohad and Irani, Michal},
-  title     = {Reconstructing Training Data from Trained Neural Networks},
-  journal   = {arXiv preprint arXiv:2206.07758},
-  year      = {2022},
+  title={Reconstructing Training Data from Trained Neural Networks},
+  author={Haim, Niv and Vardi, Gal and Yehudai, Gilad and Shamir, Ohad and Irani, Michal},
+  journal={arXiv preprint arXiv:2206.07758},
+  year={2022}
 }
 ```
 
